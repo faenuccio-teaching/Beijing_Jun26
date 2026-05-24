@@ -1,0 +1,47 @@
+name: Deploy website + docs
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+# Cancel previous runs if a new commit is pushed to the same PR or branch
+concurrency:
+  group: ${{ github.ref }}  # Group runs by the ref (branch or PR)
+  cancel-in-progress: true  # Cancel any ongoing runs in the same group
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ---- Build Jekyll site (homepage) ----
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+          bundler-cache: true
+
+      - run: bundle install
+      - run: bundle exec jekyll build
+
+      # ---- Copy Lean docs (prebuilt) ----
+      - name: Copy Lean docs into site
+        run: |
+          mkdir -p _site/docs
+          cp -r docbuild/.lake/build/doc/* _site/docs/
+          
+            # ---- Deploy both together ----
+      - uses: actions/upload-pages-artifact@v3
+        with:
+            path: _site
+
+      - uses: actions/deploy-pages@v4

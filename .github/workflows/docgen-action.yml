@@ -1,0 +1,49 @@
+name: Build project and documentation
+
+on:
+  # push:
+  # pull_request:
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write # Read access to repository contents
+  id-token: write # Required to upload the site to GitHub Pages
+  pages: write # Write access to GitHub Pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0 # Fetch all history for all branches and tags
+
+      - name: Build and lint the project.
+        id: build-lean
+        uses: leanprover/lean-action@f807b338d95de7813c5c50d018f1c23c9b93b4ec # v1.2.0
+
+      - name: Build project documentation.
+        id: build-docgen
+        uses: leanprover-community/docgen-action@not-just-push
+        with:
+          # Uncomment the next line if you wish to build a blueprint alongside your repository.
+          build-page: false
+          # blueprint: true
+    
+      - name: Commit changes
+        run: |
+          git status
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add docbuild
+            echo "Committing the following changes:"
+            git status
+            git commit -m "Auto update"
+            echo "Pushing changes:"
+            git push -vvv
+          else
+            echo "No changes to commit, skipping push"
+          fi
