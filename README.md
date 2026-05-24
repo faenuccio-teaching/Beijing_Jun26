@@ -1,13 +1,6 @@
-# Beijing_Jun26
+# Formalisation Mathématiques (ENS-Paris, printemps 2026)
 
-## GitHub configuration
+[![Page Web: Website](https://img.shields.io/badge/Website-blue.svg?logo=readthedocs&logoColor=white)](https://faenuccio-teaching.github.io/M1_ENS_26/)
 
-To set up your new GitHub repository, follow these steps:
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/faenuccio-teaching/M1_ENS_26)
 
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
-
-After following the steps above, you can remove this section from the README file.

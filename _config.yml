@@ -1,0 +1,28 @@
+title: ""
+description: ""
+url: https://faenuccio-teaching.github.io
+baseurl: "/Beijing_Jun26"
+repository: faenuccio-teaching/Beijing_Jun26
+layout: default
+nav_enabled: false
+
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+
+keep_files:
+  - docs
+  - docbuild
+
+show_downloads: true
+
+nav:
+  - title: Home
+    url: /
+
+  - title: Agenda
+    url: /#agenda
+
+  - title: GitHub
+    url: https://github.com/faenuccio-teaching/Beijing_Jun26
+
