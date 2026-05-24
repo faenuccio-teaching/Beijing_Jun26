@@ -9,7 +9,7 @@ nav_enabled: false
 remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
-
+  
 keep_files:
   - docs
   - docbuild

@@ -1,62 +1,53 @@
 ---
-# layout: default
-# the two items below are only used for `OnlyTheDoc`
-# title: "Cours Avancé *Formalisation Mathématique*"
-# nav_order: 1
-nav_exclude: true
+layout: default
 ---
 
-# Bienvenue
+# Welcome
+This website contains the basic information about the *Introductory Lean Course* for the *Academy of Mathematics and Systems Science* that takes place in May-June 2026.
 
-Ce site contient les informations concernant le Cours Avancé [Formalisation Mathématique](https://www.math.ens.psl.eu/formations/ca-formalisation-mathematique/) pour le M1 du Département de mathématiques et applications de l'ENS-Paris, qui a lieu au deuxième semestre 2025--26.
+The teacher is [Filippo A. E. Nuccio](https://perso.univ-st-etienne.fr/nf51454h/) and all material and classes will be in English.
 
-Le cours est assuré par [Filippo A. E. Nuccio](https://perso.univ-st-etienne.fr/nf51454h/): vous pouvez me contacter [par mail](mailto:filippo.nuccio@univ-st-etienne.fr) et mon bureau est le T8, au quatrième étage. Le matériel est en anglais, le cours aura (probablement) lieu en français. 
+For every lecture, there is a `.md` file (exported also as a `.pdf`), that you find below and that contains all material discussed in class; alongside these files, there is also a `.lean` file shown during class, whose solutions are posted the day following the lecture, in general.
 
-Chaque cours vient avec un fichier `.md` (exporté en `.pdf` aussi) que vous trouvez plus bas et qui contient le matériel discuté, ainsi qu'avec un fichier `.lean` à utiliser pendant le cours. Les solutions sont rajoutées le lendemain du cours, en général.
+The Mathlib `commit` upon which this project is build is [32d2424](https://github.com/leanprover-community/mathlib4/commits/32d24245c7a12ded17325299fd41d412022cd3fe): the documentation for the Mathlib version used in this project is available [here](https://faenuccio-teaching.github.io/GradCourse26/docs/index.html). 
+## Agenda
+Classes take place on Saturday, **from 9:00 to 12h00** and then **from 14:00 to 17:00** in the South Building, Room 204.
 
-Le `commit` de Mathlib sur lequel ce projet a été développé est le [32d2424](https://github.com/leanprover-community/mathlib4/commits/32d24245c7a12ded17325299fd41d412022cd3fe): la documentation correspondante se trouve [ici](https://faenuccio-teaching.github.io/M1_ENS_26/docs/). Il existe aussi une documentation de [toutes les tactiques](https://leanprover-community.github.io/mathlib4_docs/tactics.html) sur le site officiel de Mathlib.
-
-# Agenda
-Les cours ont lieu le mardi de 15h à 18h et le jeudi de 13h30 à 16h30 en Salle Bourbaki selon le calendrier suivant:
-
-| Date      | Cours         | Fichiers annexes | Notes
+| Date      | Lecture         | Ancillary Files | Notes
 |-----------|---------------|---------------|---------------
-| 3 février | Tactiques et Types | Fichiers [Lean](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/1_Tactics%26Types.lean), [MarkDown](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/1_Tactics%26Types_lecture.md) et [PDF](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/1_Tactics%26Types_lecture.pdf).| 
-| 5 février | Types inductifs et structures | Fichiers [Lean](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/2_MoreTypes.lean), [MarkDown](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/2_MoreTypes_lecture.md) et [PDF](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/2_MoreTypes_lecture.pdf)| 
-| 10 février | Algèbre 1: Classes, groupes et sous-groupes | Fichiers [Lean](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/3_AlgebraicStructures.lean), [MarkDown](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/3_AlgebraicStructures_lecture.md) et [PDF](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/3_AlgebraicStructures_lecture.pdf)|
-| 17 février | Algèbre 2: Sousgroupes et Mathlib | Fichiers du Cours 3|
-| 19 février | Algèbre 3: Groupes quotients et Anneaux | Fichiers du Cours 3|
-| 10 mars | Ensembles | Fichiers [Lean](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/5_Sets.lean), [MarkDown](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/5_Sets_lecture.md) et [PDF](https://github.com/faenuccio-teaching/M1_ENS_26/blob/master/M1ENS26/5_Sets_lecture.pdf) |
-| 12 mars | **examen** | | Examen écrit de 2h
-| 31 mars | séminaires étudiants | • 15h - Paul Landrier (Brownian motion)|  salle R3
-| 7 avril | séminaires étudiants | • 13h30 -- Leila Abubakarova (Algebraic Geometry) <br> • 15h00 Bojin Han (Algebraic Geometry)| salle Bourbaki
-| **mercredi**<br> 15 avril | séminaires étudiants | • 14h - Yann Didier (Model Theory) <br> • 15h30 - Romane Pagès (Algebra)| salle R3
-| **vendredi**<br> 17 avril | séminaires étudiants | • 16h30 - Aimeric Duchemin (Graph Theory) | online
+| May 30th, morning | Tactics and Types | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types_solutions.lean)|
+| May 30th, afternoon | More  on Types | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes_lecture.md) et [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes_solutions.lean)| **Warning** The course is 14h00–17h00
+| June 6th, morning | Algebra 1 | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures_solutions.lean)|
+| June 6th, afternoon | Algebra 2| same files as for the previous lecture |
+| June 13th, morning | Sets and Limits | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_solutions.lean) | **We'll do 13:15-16:15**
+| June 13th, afternoon | Sets and Limits | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_solutions.lean) | **We'll do 13:15-16:15**
 
 
-# Références 
+## References
 
-Il n'y a pas (encore) beaucoup de livres qui parlent de `Lean`, mais le très beau
-* [Mathematical Components](https://math-comp.github.io/mcb/), par A. Mahboubi et E. Tassi, bien que conçu pour l'assistant de preuve [`Rocq`](https://rocq-prover.org/), est une excellente présentation à ce qu'est la formalisation mathématique en général. Le troisième chapitre contient une jolie introduction à la "théorie des types" qu'on utilise.
+There aren't many books detailing how `Lean` works, but the beautiful
+* [Mathematical Components](https://math-comp.github.io/mcb/), by A. Mahboubi and E. Tassi, 
 
-Un autre résumé de la théorie des types est dans le premier chapitre "Type theory" de
-* [Homotopy Type Theory (a.k.a. "HoTT book")](https://homotopytypetheory.org/book/).
+tailored around the proof assistant [`Rocq`](https://rocq-prover.org/), is an excellent introduction to what the formalisation of mathematics is. The third chapter contains a nice introduction to the "type theory" that we use.
 
-Une source plus complète, très bien écrite et fort agréable à lire est
-* [Lectures on the Curry–Howard Isomorphism](https://www.sciencedirect.com/bookseries/studies-in-logic-and-the-foundations-of-mathematics/vol/149/suppl/C), par M. H. Sørensen et P. Urzyczyn.
+Another survey of what is needed type-theoretically can be found in the first chapter "Type theory" of the
+* [Homotopy Type Theory (a.k.a. "HoTT book")](https://homotopytypetheory.org/book/)
 
- Les deux références
-* [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/), par J. Avigad, L. de Moura, S. Kong et S. Ullrich
-* [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/), par J. Avigad et P. Massot
+A more complete source, extremely well written and a really pleasant read is
+* [Lectures on the Curry–Howard Isomorphism](https://www.sciencedirect.com/bookseries/studies-in-logic-and-the-foundations-of-mathematics/vol/149/suppl/C), by M. H. Sørensen et P. Urzyczyn.
 
-    contiennent aussi beaucoup de matériel pertinent pour notre cours.
+ The two `Lean`-oriented references
+* [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/), by J. Avigad, L. de Moura, S. Kong et S. Ullrich
+* [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/), by J. Avigad et P. Massot
 
-## Prérequis Lean et Git
+also contain a lot of material relevant to our course.
 
-Avant le début du cours (le mardi 3 février 2026), assurez-vous de:
-* avoir accès à une connexion internet lorsque à l'ENS, idéalement via Eduroam;
-* avoir configuré une installation `git`: si vous avez besoin d'aide, vous pouvez vous référer par exemple à la page <a href="https://www.imo.universite-paris-saclay.fr/~patrick.massot/misc/git.html">maintenue par Patrick Massot</a>;
-* avoir créé un compte <a href="https://github.com">GitHub</a> pour pouvoir soumettre votre travail;
-* installer Lean sur votre ordinateur, en suivant les [instructions officielles](https://lean-lang.org/install/): si vous rencontrez des difficultés, on en parlera lors du premier cours;
-* d'avoir créé un `fork` du *repository* en clickant sur le menu déroulant en haut à droite de [cette page](https://github.com/faenuccio-teaching/M1_ENS_26.git), et de l'avoir cloné via `git clone` sur votre ordinateur: pour ce faire, allez sur la page `GitHub` de votre `fork`, clickez sur la flèche verte "Code" et copiez l’adresse. Après, dans votre terminal `Git` (comment y accéder dépend de votre système d'exploitation) tapez `git clone` suivi de l'adresse copiée auparavant. Vous aurez alors un dossier appelé `M1_ENS_26` où vous pourrez travailler;
-* d'avoir disabilité toutes les fonctionnalités `Chat` de VSCode: pour ce faire, allez  dans `Settings → Features → Chat` et sélectionnez `Disable AI Features`.
+## Lean and GitHub prerequisites
+
+Before the beginning of the course (on Saturday, May 30th 2026), make sure to:
+* have a working internet connection once at ENS, ideally through Eduroam;
+* have a working `git` installation: in case you need help, you can try to have a look at the [nice tutorial](https://www.imo.universite-paris-saclay.fr/~patrick.massot/misc/git.html) maintained by Patrick Massot;
+* have a an account on [GitHub](https://github.com) to be able to upload your work;
+* have a working installation of Lean on your laptop, by following the [offical instructions](https://lean-lang.org/install/). Shall you run into problems, don't panic: we'll discuss everything during the first lecture;
+* have downloaded (through `git clone`) the repository of this course, available at [https://github.com/faenuccio-teaching/Beijing_Jun26.git](https://github.com/faenuccio-teaching/Beijing_Jun26.git);
+* have disabled all `Chat AI Features` from VSCode: for this, go to `Settings → Features → Chat` and select `Disable AI Features`. 
