@@ -15,12 +15,12 @@ Classes take place on Saturday, **from 9:00 to 12h00** and then **from 14:00 to 
 
 | Date      | Lecture         | Ancillary Files | Notes
 |-----------|---------------|---------------|---------------
-| May 30th, morning | Tactics and Types | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/1_Tactics%26Types_solutions.lean)|
-| May 30th, afternoon | More  on Types | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes_lecture.md) et [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/2_MoreTypes_solutions.lean)| **Warning** The course is 14h00–17h00
-| June 6th, morning | Algebra 1 | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/3_AlgebraicStructures_solutions.lean)|
-| June 6th, afternoon | Algebra 2| same files as for the previous lecture |
-| June 13th, morning | Sets and Limits | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_solutions.lean) | **We'll do 13:15-16:15**
-| June 13th, afternoon | Sets and Limits | Files [Lean](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits.lean), [MarkDown](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.md) and [PDF](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_lecture.pdf). And the [solutions](https://github.com/faenuccio-teaching/GradCourse26/blob/master/GradCourse26/5_Sets&Limits_solutions.lean) | **We'll do 13:15-16:15**
+| May 30th, morning | Tactics and Types | |
+| May 30th, afternoon | More  on Types | |
+| June 6th, morning | Algebra 1 | |
+| June 6th, afternoon | Algebra 2| |
+| June 13th, morning | Sets and Limits | |
+| June 13th, afternoon | Advanced topics ||
 
 
 ## References
