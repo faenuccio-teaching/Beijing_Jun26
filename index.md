@@ -2,12 +2,12 @@
 layout: home
 ---
 
-## Welcome
+# Welcome
 This website contains the basic information about the *Introductory Lean Course* for the *Academy of Mathematics and Systems Science* in Beijing, that takes place in May-June 2026.
 
 The teacher is [Filippo A. E. Nuccio](https://perso.univ-st-etienne.fr/nf51454h/) and all material and classes will be in English.
 
-For every lecture, there is a `.md` file (exported also as a `.pdf`), that you find below and that contains all material discussed in class; alongside these files, there is also a `.lean` file shown during class, whose solutions are posted the day following the lecture, in general.
+For every lecture, there is a `.md` file (exported also as a `.pdf`), that you find below and that contains all material discussed in class; alongside these files, there is also a `.lean` file shown during class and containing all the exercises, whose solutions are posted the day following the lecture, in general.
 
 The Mathlib `commit` upon which this project is build is [5450b53](https://github.com/leanprover-community/mathlib4/commit/5450b53e5ddc75d46418fabb605edbf36bd0beb6).
 <!-- : the documentation for the Mathlib version used in this project is available [here](https://faenuccio-teaching.github.io/GradCourse26/docs/index.html).  -->
@@ -48,7 +48,7 @@ also contain a lot of material relevant to our course.
 Before the beginning of the course (on Saturday, May 30th 2026), make sure to:
 * have a working internet connection once at the AMSS;
 * have a working `git` installation: in case you need help, you can try to have a look at the [nice tutorial](https://www.imo.universite-paris-saclay.fr/~patrick.massot/misc/git.html) maintained by Patrick Massot;
-* have a an account on [GitHub](https://github.com) to be able to upload your work;
+* have an account on [GitHub](https://github.com) to be able to upload your work;
 * have a working installation of Lean on your laptop, by following the [offical instructions](https://lean-lang.org/install/). Shall you run into problems, don't panic: we'll have time to debug during the first lecture;
-* have downloaded (through `git clone`) the repository of this course, available at [https://github.com/faenuccio-teaching/Beijing_Jun26.git](https://github.com/faenuccio-teaching/Beijing_Jun26.git);
+* have downloaded (through `git clone`) the repository of this course, available at [https://github.com/faenuccio-teaching/Beijing_Jun26.git](https://github.com/faenuccio-teaching/Beijing_Jun26.git). After the download, navigate (in the terminal) to the folder and then run the command `lake exe cache get` followed by `lake build`: the first should take 30 seconds to 1 minute to complete, the second should be almost instantaneous, and if this is the case everything is good ;
 * have disabled all `Chat AI Features` from VSCode: for this, go to `Settings → Features → Chat` and select `Disable AI Features`. 
