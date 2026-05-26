@@ -4,7 +4,7 @@ url: https://faenuccio-teaching.github.io
 baseurl: "/Beijing_Jun26"
 repository: faenuccio-teaching/Beijing_Jun26
 layout: default
-nav_enabled: false
+nav_enabled: true
 
 remote_theme: just-the-docs/just-the-docs
 plugins:
