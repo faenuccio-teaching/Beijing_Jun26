@@ -9,7 +9,9 @@ The teacher is [Filippo A. E. Nuccio](https://perso.univ-st-etienne.fr/nf51454h/
 
 For every lecture, there is a `.md` file (exported also as a `.pdf`), that you find below and that contains all material discussed in class; alongside these files, there is also a `.lean` file shown during class and containing all the exercises, whose solutions are posted the day following the lecture, in general.
 
-The Mathlib `commit` upon which this project is build is [5450b53](https://github.com/leanprover-community/mathlib4/commit/5450b53e5ddc75d46418fabb605edbf36bd0beb6). The documentation for the Mathlib version used in this project is available [here](https://faenuccio-teaching.github.io/Beijing_Jun26/docs/): consider in particular the [tactics page](https://faenuccio-teaching.github.io/Beijing_Jun26/docs/tactics.html). 
+The Mathlib `commit` upon which this project is build is [5450b53](https://github.com/leanprover-community/mathlib4/commit/5450b53e5ddc75d46418fabb605edbf36bd0beb6). 
+
+<!-- The documentation for the Mathlib version used in this project is available [here](https://faenuccio-teaching.github.io/Beijing_Jun26/docs/): consider in particular the [tactics page](https://faenuccio-teaching.github.io/Beijing_Jun26/docs/tactics.html).  -->
 ## Agenda
 Classes take place on Saturday, **from 9:00 to 12h00** and then **from 14:00 to 17:00** in the South Building, Room 204.
 
