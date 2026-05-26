@@ -1,4 +1,4 @@
-docbuild
+# docbuild
 .lake
 *.pdf 
 *.aux 
@@ -14,7 +14,7 @@ docbuild
 # Created by `lake exe cache get` if no home directory is available
 # .cache
 # `lake` stores its files here:
-.lake
+# .lake
 # Python bytecode cache directories
 # **/__pycache__/
 # Progress file from scripts/rm_set_option.py
