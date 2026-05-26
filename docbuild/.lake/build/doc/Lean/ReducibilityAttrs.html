@@ -9,7 +9,7 @@ instances and definitions that appear in types matched during implicit argument 
 (e.g., <code><a href=".././Init/Prelude.html#Nat.add">Nat.add</a></code>, <code><a href=".././Init/Prelude.html#Array.size">Array.size</a></code>). These definitions cannot be eagerly reduced (instances expand
 into large terms, recursive definitions are problematic), but must be unfoldable when checking
 implicit arguments and resolving instance diamonds (e.g., <code><a href=".././Init/Prelude.html#Add">Add</a> <a href=".././Init/Prelude.html#Nat">Nat</a></code> via direct instance vs via
-<code>Semiring</code>). The attribute <code>[implicit_reducible]</code> (or its alias <code>[instance_reducible]</code>) marks
+<code><a href=".././Mathlib/Algebra/Ring/Defs.html#Semiring">Semiring</a></code>). The attribute <code>[implicit_reducible]</code> (or its alias <code>[instance_reducible]</code>) marks
 a definition with this status.</li><li><strong><code><a href=".././Lean/ReducibilityAttrs.html#Lean.ReducibilityStatus.semireducible">semireducible</a></code></strong>: The default. Unfolded at <code>TransparencyMode.<a href=".././Lean/ReducibilityAttrs.html#Lean.instInhabitedReducibilityStatus.default">default</a></code> or above. Used for
 ordinary definitions. Suitable for user-written code where <code>isDefEq</code> should try hard during
 type checking, but not during speculative proof automation.</li><li><strong><code><a href=".././Lean/ReducibilityAttrs.html#Lean.ReducibilityStatus.irreducible">irreducible</a></code></strong>: Only unfolded at <code>TransparencyMode.all</code>. The definition body is effectively

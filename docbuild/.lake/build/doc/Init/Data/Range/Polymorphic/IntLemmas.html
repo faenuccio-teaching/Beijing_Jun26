@@ -452,7 +452,7 @@
 varying the lower bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b ≤ a</code>, the statement holds for the empty range <code>a...b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, the
 statement holds for nonempty ranges <code>a...b</code> if it holds for the smaller range
-<code>(a + 1)...b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rco">length_toList_rco</a></code>.</p><pre><code>example (a b : Int) : (a...b).toList.length = (b - a).toNat := by
+<code>(a + 1)...b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rco">length_toList_rco</a></code>.</p><pre><code>example (a b : Int) : (a...b).toList.length = (b - a).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_rco_left">Int.induct_rco_left</a>
   case base =&gt;
     simp [Int.toList_rco_eq_nil, List.length_nil, Int.zero_eq_toNat_sub_iff, *]
@@ -470,7 +470,7 @@ statement holds for nonempty ranges <code>a...b</code> if it holds for the small
 <span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">motive</span> <span class="fn">a</span> <span class="fn">b</span></span></div></div><p>Induction principle for proving properties of <code><a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>-based ranges of the form <code>a...b</code> by
 varying the upper bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b ≤ a</code>, the statement holds for the empty range <code>a...b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, if the
-statement holds for <code>a...b</code>, it also holds for the larger range <code>a...(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rco">length_toList_rco</a></code>.</p><pre><code>example (a b : Int) : (a...b).toList.length = (b - a).toNat := by
+statement holds for <code>a...b</code>, it also holds for the larger range <code>a...(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rco">length_toList_rco</a></code>.</p><pre><code>example (a b : Int) : (a...b).toList.length = (b - a).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_rco_right">Int.induct_rco_right</a>
   case base =&gt;
     simp only [Int.toList_rco_eq_nil, List.length_nil, Int.zero_eq_toNat_sub_iff, *]
@@ -845,7 +845,7 @@ statement holds for <code>a...b</code>, it also holds for the larger range <code
 varying the lower bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b &lt; a</code>, the statement holds for the empty range <code>a...=b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, the
 statement holds for nonempty ranges <code>a...b</code> if it holds for the smaller range
-<code>(a + 1)...=b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rcc">length_toList_rcc</a></code>.</p><pre><code>example (a b : Int) : (a...=b).toList.length = (b + 1 - a).toNat := by
+<code>(a + 1)...=b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rcc">length_toList_rcc</a></code>.</p><pre><code>example (a b : Int) : (a...=b).toList.length = (b + 1 - a).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_rcc_left">Int.induct_rcc_left</a>
   case base =&gt;
     simp only [Int.toList_rcc_eq_nil, List.length_nil, Int.zero_eq_toNat_sub_iff, *]; omega
@@ -863,10 +863,10 @@ statement holds for nonempty ranges <code>a...b</code> if it holds for the small
 <span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">motive</span> <span class="fn">a</span> <span class="fn">b</span></span></div></div><p>Induction principle for proving properties of <code><a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>-based ranges of the form <code>a...=b</code> by
 varying the upper bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b ≤ a</code>, the statement holds for the subsingleton range <code>a...=b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, if the
-statement holds for <code>a...=b</code>, it also holds for the larger range <code>a...=(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rcc">length_toList_rcc</a></code>.</p><pre><code>example (a b : Int) : (a...=b).toList.length = (b + 1 - a).toNat := by
+statement holds for <code>a...=b</code>, it also holds for the larger range <code>a...=(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_rcc">length_toList_rcc</a></code>.</p><pre><code>example (a b : Int) : (a...=b).toList.length = (b + 1 - a).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_rcc_right">Int.induct_rcc_right</a>
   case base a b hge =&gt;
-    by_cases h : b &lt; a
+    <a href="../../../.././Mathlib/Logic/Basic.html#by_cases">by_cases</a> h : b &lt; a
     · simp only [Int.toList_rcc_eq_nil, List.length_nil, *]
       omega
     · have : b = a := by omega
@@ -1242,7 +1242,7 @@ statement holds for <code>a...=b</code>, it also holds for the larger range <cod
 varying the lower bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b ≤ a + 1</code>, the statement holds for the empty range <code>a&lt;...b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, the
 statement holds for nonempty ranges <code>a&lt;...b</code> if it holds for the smaller range
-<code>(a + 1)&lt;...b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roo">length_toList_roo</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...b).toList.length = (b - a - 1).toNat := by
+<code>(a + 1)&lt;...b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roo">length_toList_roo</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...b).toList.length = (b - a - 1).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_roo_left">Int.induct_roo_left</a>
   case base =&gt;
     simp only [Int.toList_roo_eq_nil, List.length_nil, Int.zero_eq_toNat_sub_iff, *]; omega
@@ -1260,7 +1260,7 @@ statement holds for nonempty ranges <code>a&lt;...b</code> if it holds for the s
 <span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">motive</span> <span class="fn">a</span> <span class="fn">b</span></span></div></div><p>Induction principle for proving properties of <code><a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>-based ranges of the form <code>a&lt;...b</code> by
 varying the upper bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b ≤ a + 1</code>, the statement holds for the empty range <code>a&lt;...b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, if the
-statement holds for <code>a&lt;...b</code>, it also holds for the larger range <code>a&lt;...(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roo">length_toList_roo</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...b).toList.length = (b - a - 1).toNat := by
+statement holds for <code>a&lt;...b</code>, it also holds for the larger range <code>a&lt;...(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roo">length_toList_roo</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...b).toList.length = (b - a - 1).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_roo_right">Int.induct_roo_right</a>
   case base =&gt;
     simp only [Int.toList_roo_eq_nil, List.length_nil, *]; omega
@@ -1659,7 +1659,7 @@ statement holds for <code>a&lt;...b</code>, it also holds for the larger range <
 by varying the lower bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b ≤ a</code>, the statement holds for the empty range <code>a&lt;...=b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, the
 statement holds for nonempty ranges <code>a&lt;...=b</code> if it holds for the smaller range
-<code>(a + 1)&lt;...=b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roc">length_toList_roc</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...=b).toList.length = (b - a).toNat := by
+<code>(a + 1)&lt;...=b</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roc">length_toList_roc</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...=b).toList.length = (b - a).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_roc_left">Int.induct_roc_left</a>
   case base =&gt;
     simp only [Int.toList_roc_eq_nil, List.length_nil, Int.zero_eq_toNat_sub_iff, *]
@@ -1677,7 +1677,7 @@ statement holds for nonempty ranges <code>a&lt;...=b</code> if it holds for the 
 <span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">motive</span> <span class="fn">a</span> <span class="fn">b</span></span></div></div><p>Induction principle for proving properties of <code><a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>-based ranges of the form <code>a&lt;...=b</code>
 by varying the upper bound.</p><p>In the <code>base</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> with
 <code>b ≤ a</code>, the statement holds for the empty range <code>a&lt;...=b</code>.</p><p>In the <code>step</code> case, one proves that for any <code>a : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code> and <code>b : <a href="../../../.././Init/Data/Int/Basic.html#Int">Int</a></code>, if the
-statement holds for <code>a&lt;...=b</code>, it also holds for the larger range <code>a&lt;...=(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roc">length_toList_roc</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...=b).toList.length = (b - a).toNat := by
+statement holds for <code>a&lt;...=b</code>, it also holds for the larger range <code>a&lt;...=(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.length_toList_roc">length_toList_roc</a></code>.</p><pre><code>example (a b : Int) : (a&lt;...=b).toList.length = (b - a).<a href="../../../.././Mathlib/Computability/Reduce.html#toNat">toNat</a> := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/IntLemmas.html#Int.induct_roc_right">Int.induct_roc_right</a>
   case base =&gt;
     simp only [Int.toList_roc_eq_nil, List.length_nil, Int.zero_eq_toNat_sub_iff, *]

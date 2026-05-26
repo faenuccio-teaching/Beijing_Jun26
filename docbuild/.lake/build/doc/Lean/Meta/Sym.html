@@ -25,12 +25,12 @@ abstractions that users may not want unfolded. For example, when applying <code>
 typically do not want it transformed to <code>y ≤ x</code> just because <code><a href="../.././Init/Prelude.html#GE.ge">GE.ge</a></code> is a reducible abbreviation.</p><ol start="2"><li><p><strong>Proofs are ignored.</strong> We skip proof arguments during matching due to proof irrelevance. Proofs are
 &quot;noisy&quot;: they are typically built using different automation or manually, so we can have radically
 different proof terms for the same trivial fact.</p></li><li><p><strong>Instances are ignored.</strong> Lean's class hierarchy contains many diamonds. For example, <code><a href="../.././Init/Prelude.html#Add">Add</a> <a href="../.././Init/Prelude.html#Nat">Nat</a></code> can be
-obtained directly from the <code><a href="../.././Init/Prelude.html#Nat">Nat</a></code> library or derived from the fact that <code><a href="../.././Init/Prelude.html#Nat">Nat</a></code> is a <code>Semiring</code>. Proof
+obtained directly from the <code><a href="../.././Init/Prelude.html#Nat">Nat</a></code> library or derived from the fact that <code><a href="../.././Init/Prelude.html#Nat">Nat</a></code> is a <code><a href="../.././Mathlib/Algebra/Ring/Defs.html#Semiring">Semiring</a></code>. Proof
 automation like <code>grind</code> attempts to canonicalize instances, but this is expensive. Instead, we treat
 instances as support terms and skip them during matching, and we check them later using the standard
 definitionally equality test in a mode where only reducible and instance declarations are unfolded.</p><p><strong>The implicit assumption:</strong> If two terms have the same instance type, they are definitionally equal.
 This holds in well-designed Lean code. For example, the <code><a href="../.././Init/Prelude.html#Add">Add</a> <a href="../.././Init/Prelude.html#Nat">Nat</a></code> instance from the <code><a href="../.././Init/Prelude.html#Nat">Nat</a></code> library is
-definitionally equal to the one derived from <code>Semiring</code>, and this can be established by unfolding only
+definitionally equal to the one derived from <code><a href="../.././Mathlib/Algebra/Ring/Defs.html#Semiring">Semiring</a></code>, and this can be established by unfolding only
 reducible and instance declarations. Code that violates this assumption is considered misuse of Lean's
 instance system.</p></li><li><p><strong>Types must be indexed.</strong> Unlike proofs and instances, types cannot be ignored, without indexing them,
 pattern matching produces too many candidates. Like other abbreviations, type abbreviations are expanded.

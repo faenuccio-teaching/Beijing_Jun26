@@ -176,7 +176,7 @@ directly.</p></div></div><div class="decl" id="Lean.Elab.Command.withoutCommandI
 <span class="decl_args">
 <span class="fn">(<span class="fn">act</span> : <span class="fn"><a href="../.././Lean/Elab/Command.html#Lean.Elab.Command.CommandElabM">CommandElabM</a> <a href="../.././Init/Prelude.html#Unit">Unit</a></span>)</span></span>
 <span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././Lean/Elab/Command.html#Lean.Elab.Command.CommandElabM">CommandElabM</a> <a href="../.././Init/Prelude.html#Unit">Unit</a></span></div></div><p>If <code>hint?</code> is <code>some hint</code>, establishes a new context for macro scope naming and runs <code>act</code> in it,
-otherwise runs <code>act</code> directly without changes.</p><p>Context names as documented in Note <code>Macro Scope Representation</code> help with avoiding rebuilds and
+otherwise runs <code>act</code> directly without changes.</p><p>Context names as documented in Note <code>Macro Scope <a href="../.././Mathlib/RepresentationTheory/Basic.html#Representation">Representation</a></code> help with avoiding rebuilds and
 <code>prefer_native</code> lookup misses from macro scopes in declaration names and other exported information.
 This function establishes a new context with a globally unique name by combining the name of the
 current module with <code>hint</code> while also checking for previously used <code>hint</code>s in the same module.

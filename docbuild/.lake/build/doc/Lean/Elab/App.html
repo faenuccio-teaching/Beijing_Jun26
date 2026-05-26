@@ -90,9 +90,9 @@ The major parameters include all of the parameters that transitively appear in t
 as well as &quot;first-order&quot; arguments that include such parameters,
 since they too can help with elaborating discriminants.</p><p>For example, in the following theorem the argument <code>h : a = b</code>
 should be elaborated eagerly because it contains <code>b</code>, which occurs in <code>motive b</code>.</p><pre><code>theorem Eq.subst' {α} {motive : α → Prop} {a b : α} (h : a = b) : motive a → motive b
-</code></pre><p>For another example, the term <code>isEmptyElim (α := α)</code> is an underapplied eliminator, and it needs
-argument <code>α</code> to be elaborated eagerly to create a type-correct motive.</p><pre><code>def isEmptyElim [IsEmpty α] {p : α → Sort _} (a : α) : p a := ...
-example {α : Type _} [IsEmpty α] : <a href="../.././Init/Prelude.html#id">id</a> (α → False) := isEmptyElim (α := α)
+</code></pre><p>For another example, the term <code><a href="../.././Mathlib/Logic/IsEmpty/Defs.html#isEmptyElim">isEmptyElim</a> (α := α)</code> is an underapplied eliminator, and it needs
+argument <code>α</code> to be elaborated eagerly to create a type-correct motive.</p><pre><code>def <a href="../.././Mathlib/Logic/IsEmpty/Defs.html#isEmptyElim">isEmptyElim</a> [IsEmpty α] {p : α → Sort _} (a : α) : p a := ...
+example {α : Type _} [IsEmpty α] : <a href="../.././Init/Prelude.html#id">id</a> (α → False) := <a href="../.././Mathlib/Logic/IsEmpty/Defs.html#isEmptyElim">isEmptyElim</a> (α := α)
 </code></pre></div></li></ul><details id="instances-for-list-Lean.Elab.Term.ElabElimInfo" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="Lean.Elab.Term.instReprElabElimInfo.repr"><div class="def"><div class="gh_link"><a href="https://github.com/leanprover/lean4/blob/3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc/src/Lean/Elab/App.lean#L883-L883">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
 <span class="decl_name"><a class="break_within" href="../.././Lean/Elab/App.html#Lean.Elab.Term.instReprElabElimInfo.repr"><span class="name">Lean</span>.<span class="name">Elab</span>.<span class="name">Term</span>.<span class="name">instReprElabElimInfo</span>.<span class="name">repr</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././Lean/Elab/App.html#Lean.Elab.Term.ElabElimInfo">ElabElimInfo</a> → <span class="fn"><a href="../.././Init/Prelude.html#Nat">Nat</a> → <a href="../.././Init/Data/Format/Basic.html#Std.Format">Format</a></span></span></div></div><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-Lean.Elab.Term.instReprElabElimInfo.repr" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="Lean.Elab.Term.instReprElabElimInfo"><div class="instance"><div class="gh_link"><a href="https://github.com/leanprover/lean4/blob/3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc/src/Lean/Elab/App.lean#L883-L883">source</a></div><div class="attributes">@[implicit_reducible]</div>
 <div class="decl_header"><span class="decl_kind">instance</span>
@@ -140,7 +140,7 @@ example (a : Nat) : (a * a) % 2 = a % 2 :=
 example (a : Nat) (f : <a href="../.././Init/Prelude.html#Nat">Nat</a> → Nat) : (f a + 1) % 2 ≠ <a href="../.././Lean/Elab/App.html#Lean.Elab.Term.ElabAppArgs.State.f">f</a> a :=
   evenOddRec _ _ (f a)
   /-
-  Similar to before, except `f a` is substituted: `motive := fun n =&gt; (n + 1) % 2 ≠ n`.
+  <a href="../.././Mathlib/Topology/MetricSpace/Similarity.html#Similar">Similar</a> to before, except `f a` is substituted: `motive := fun n =&gt; (n + 1) % 2 ≠ n`.
   Now the first hole has expected type `∀ n, (n * 2 + 1) % 2 ≠ n * 2`.
   Now the second hole has expected type `∀ n, (n * 2 + 1 + 1) % 2 ≠ n * 2 + 1`.
 
