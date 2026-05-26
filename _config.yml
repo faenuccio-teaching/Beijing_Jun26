@@ -4,11 +4,7 @@ url: https://faenuccio-teaching.github.io
 baseurl: "/Beijing_Jun26"
 repository: faenuccio-teaching/Beijing_Jun26
 layout: default
-nav_enabled: true
-# Enable heading anchors
-heading_anchors: true
-# Aux links appear in the upper right
-aux_links_new_tab: false
+nav_enabled: false
 
 remote_theme: just-the-docs/just-the-docs
 plugins:
@@ -25,6 +21,6 @@ nav:
     url: /
     has_toc: true
 
-#   - title: GitHub
-#     url: https://github.com/faenuccio-teaching/Beijing_Jun26
+  - title: GitHub
+    url: https://github.com/faenuccio-teaching/Beijing_Jun26
 

@@ -1,8 +1,5 @@
 ---
 layout: home
-title: Home
-nav_order: 1
-has_toc: true
 ---
 
 ## Welcome
@@ -19,8 +16,8 @@ Classes take place on Saturday, **from 9:00 to 12h00** and then **from 14:00 to 
 
 | Date      | Lecture         | Ancillary Files | Notes
 |-----------|---------------|---------------|---------------
-| May 30th, morning | Tactics and Types | |
-| May 30th, afternoon | More  on Types | |
+| May 30th, morning | Tactics and Types | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types.lean) [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types_lecture.pdf)|
+| May 30th, afternoon | More  on Types | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes.lean)   [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.pdf)|
 | June 6th, morning | Algebra 1 | |
 | June 6th, afternoon | Algebra 2| |
 | June 13th, morning | Sets and Limits | |
@@ -49,9 +46,9 @@ also contain a lot of material relevant to our course.
 ## Lean and GitHub prerequisites
 
 Before the beginning of the course (on Saturday, May 30th 2026), make sure to:
-* have a working internet connection once at ENS, ideally through Eduroam;
+* have a working internet connection once at the AMSS;
 * have a working `git` installation: in case you need help, you can try to have a look at the [nice tutorial](https://www.imo.universite-paris-saclay.fr/~patrick.massot/misc/git.html) maintained by Patrick Massot;
 * have a an account on [GitHub](https://github.com) to be able to upload your work;
-* have a working installation of Lean on your laptop, by following the [offical instructions](https://lean-lang.org/install/). Shall you run into problems, don't panic: we'll discuss everything during the first lecture;
+* have a working installation of Lean on your laptop, by following the [offical instructions](https://lean-lang.org/install/). Shall you run into problems, don't panic: we'll have time to debug during the first lecture;
 * have downloaded (through `git clone`) the repository of this course, available at [https://github.com/faenuccio-teaching/Beijing_Jun26.git](https://github.com/faenuccio-teaching/Beijing_Jun26.git);
 * have disabled all `Chat AI Features` from VSCode: for this, go to `Settings → Features → Chat` and select `Disable AI Features`. 
