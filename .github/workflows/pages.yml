@@ -33,13 +33,13 @@ jobs:
       - run: bundle install
       - run: bundle exec jekyll build
 
-      # # ---- Copy Lean docs (prebuilt) ----
-      # - name: Copy Lean docs into site
-      #   run: |
-      #     mkdir -p _site/docs
-      #     cp -r docbuild/.lake/build/doc/* _site/docs/
+      # ---- Copy Lean docs (prebuilt) ----
+      - name: Copy Lean docs into site
+        run: |
+          mkdir -p _site/docs
+          cp -r docbuild/.lake/build/doc/* _site/docs/
           
-            # ---- Deploy both together ----
+      # ---- Deploy both together ----
       - uses: actions/upload-pages-artifact@v3
         with:
             path: _site
