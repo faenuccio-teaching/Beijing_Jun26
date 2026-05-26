@@ -1,3 +1,7 @@
+<!-- ---
+nav_exclude: true
+--- -->
+
 # Algebraic Structures
 
 Let's begin with some *painful* example: `⌘`
