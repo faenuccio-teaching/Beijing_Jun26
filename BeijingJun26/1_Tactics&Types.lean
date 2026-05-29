@@ -89,15 +89,17 @@ example : P → P ∨ Q := by
 example : P ∨ Q → Q ∨ P := by
   sorry
 
-/- The result of `cases` can be given explicit names, by using `rcases ? with ?1 | ?h2 `-/
-example : P ∨ Q → (P → R) → (Q → R) → R := by
-  sorry
+/- The result of `cases` can be given explicit names, by using `rcases h with h1 | h2 `-/
+example : P ∨ Q → (P → R) → (Q → R) → R := by sorry
 
 -- `⌘`
 
-/- Use of the `by_cases` tactic. -/
+/- Use of the `by_cases` tactic: the law of excluded middle. -/
 example : R ∨ ¬ R := by
   sorry
+
+
+example (h1 : P → Q) (h2 : ¬ P → R) : Q ∨ R := by sorry
 
 -- `⌘`
 

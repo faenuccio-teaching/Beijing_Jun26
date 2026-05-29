@@ -1,10 +1,6 @@
-<!-- ---
-nav_exclude: true
---- -->
-
 # Tactics and Types
 
-Welcome!
+Welcome! I'm Filippo and we're going to learn Lean.
 
 Before discussing how to do things, let's have a look at what we're speaking about.
 
@@ -65,7 +61,7 @@ For both logical connectors, there are two use-cases: we might want to *prove* a
 
 ### And
 * `constructor` transforms a goal `⊢ p ∧ q` into the two goals `⊢ p` and `⊢ q`.
-* `.left` and `.right` (or `.1` and `.2`) are the projections from `p ∧ q` to `p` and `q`.
+* `.left` and `.right` (or `.1` and `.2`) are the projections from `p ∧ q` to `p` and to `q`.
 
 ### Or
 * `right` and `left` transform a goal `p ∨ q` in `p` and in `q`, respectively.
@@ -89,15 +85,15 @@ We'll use it as a replacement for the foundational theory, **replacing sets by t
 
 > We do not define *what* types are. They *are*.
 
-Types contain *terms*: we do not call them elements. The notation `x ∈ A` is **not** used, and reserved for sets (that will appear, at a certain point). The syntax to say that `t` is a term of the type `T` is
+Types contain *terms*: we do not call them elements. The notation `x ∈ A` is **not** used, and reserved for sets (that will appear, at a certain point). The syntax to say that `x` is a term of the type `T` is
 
-    t : T
+    x : T
 
-and reads "the type of `t` is `T`".
+and reads "the type of `x` is `T`".
 
-Given some term `t` we can ask Lean what its type is with the command
+Given some term `x` we can ask Lean what its type is with the command
 ```
-#check t
+#check x
 ```
 
 +++ Sets = Types?
@@ -105,7 +101,7 @@ Given some term `t` we can ask Lean what its type is with the command
 
 So, if you encounter
 
-    t : T, t : S
+    x : T, x : S
 
 there is certainly a problem, unless `T = S`. In particular, `1 : ℕ` and `1 : ℤ` shows that the two `1`'s are **different**.
 
