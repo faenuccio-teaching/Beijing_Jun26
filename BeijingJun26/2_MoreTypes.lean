@@ -63,6 +63,7 @@ theorem exists_p_gt_100 (E : Euclid_forall) : ∃ p, Nat.Prime p ∧ 100 < p := 
 
 #check (∃ n : ℕ, n ^ 2 + 37 * n < 2 ^ n)
 
+#check fun a ↦ ((fun n ↦ ∃ m : ℕ, n < m) a)
 #check (a : ℕ) ×' ((fun n ↦ ∃ m : ℕ, n < m) a)
 #check (⟨3,  ⟨42, by norm_num⟩⟩ : (a : ℕ) ×' ((fun n ↦ ∃ m : ℕ, n < m) a))
 
@@ -81,7 +82,7 @@ example (f : ℝ → ℝ) (h : ∀ x, ∃ y, x = f y) : Surjective f := by
 
 -- `⌘`
 
-/- # False, negation, contradiction -/
+/- # Negation and contradiction -/
 
 -- Use of the `exfalso` tactic
 example : False → P := by
@@ -128,16 +129,16 @@ def Hunting : NiceType := g 2 Cat Jerry
 
 -- #### Another example
 
-inductive ENS_Or (p q : Prop) : Prop
-| left : p → ENS_Or p q
-| right : q → ENS_Or p q
+inductive AMSS_Or (p q : Prop) : Prop
+| left : p → AMSS_Or p q
+| right : q → AMSS_Or p q
 
-#print ENS_Or
+#print AMSS_Or
 
-example (n : ℕ) : ENS_Or (n = 0) (∃ m, n = Nat.succ m) := by
+example (n : ℕ) : AMSS_Or (n = 0) (∃ m, n = Nat.succ m) := by
   sorry
 
-example (n : ℕ) : ENS_Or (n = 0) (∃ m, n = Nat.succ m) := by
+example (n : ℕ) : AMSS_Or (n = 0) (∃ m, n = Nat.succ m) := by
   sorry
 
 
@@ -156,45 +157,32 @@ example (n : ℕ) : ENS_Or (n = 0) (∃ m, n = Nat.succ m) := by
 example : P ∧ (Q ∨ S) ↔ P ∧ Q ∨ P ∧ S := by
   sorry
 
-
 -- `⌘`
 
-end InductiveTypes
+inductive AMSS_Nat
+| AMSS_zero : AMSS_Nat
+| AMSS_succ : AMSS_Nat → AMSS_Nat
+open AMSS_Nat
 
-section Structures
+#print AMSS_Nat
+#check AMSS_Nat
 
-inductive ENS_Nat
-| ENS_zero : ENS_Nat
-| ENS_succ : ENS_Nat → ENS_Nat
-open ENS_Nat
+def AMSS_Nat_add : AMSS_Nat → AMSS_Nat → AMSS_Nat := sorry
 
-#print ENS_Nat
-#check ENS_Nat
-
-def ENS_Nat_add : ENS_Nat → ENS_Nat → ENS_Nat := sorry
-
--- A structure containing simply a `0` and `+`:
-#print AddZero
-
-example : (AddZero ENS_Nat) := sorry
-
-
-
--- We want to prove that `ENS_Nat = ℕ`: after all they are *constructed* in the same way!
+-- We want to prove that `AMSS_Nat = ℕ`: after all they are *constructed* in the same way!
 #print Equiv
 
-def JustOne_fun : ℕ → ENS_Nat :=
+def JustOne_fun : ℕ → AMSS_Nat :=
   sorry
 
 
-def JustOne_inv : ENS_Nat → ℕ :=
+def JustOne_inv : AMSS_Nat → ℕ :=
   sorry
 
 
 -- The rest of the equivalence is left as an *exercise*.
 
-
-end Structures
+end InductiveTypes
 
 
 section Exercises
@@ -288,8 +276,8 @@ open Function
 
 /- **Exercise**
 In the following steps, you're required to complete the proof that `JustOne` is an equivalence
-between `ENS_Nat` and `ℕ`. -/
-open ENS_Nat
+between `AMSS_Nat` and `ℕ`. -/
+open AMSS_Nat
 
 
 def JustOne_Left : LeftInverse JustOne_inv JustOne_fun := by
@@ -302,12 +290,12 @@ def JustOne_Left : LeftInverse JustOne_inv JustOne_fun := by
 def JustOne_Right : RightInverse JustOne_inv JustOne_fun := sorry
 
 
-def JustOne : ℕ ≃ ENS_Nat := sorry
+def JustOne : ℕ ≃ AMSS_Nat := sorry
 
 
 /- **Exercise**
 The successor is not surjective, but you can't rely on the library because we're not using `ℕ`. -/
-example : ¬ Surjective ENS_succ := by
+example : ¬ Surjective AMSS_succ := by
   sorry
 
 
@@ -330,11 +318,6 @@ State and prove that if someone is not on the `Right`, they are on the `Left` -/
 -- **Exercise**
 -- Can you write down on paper, without using VSCode, the type of `Iff.rec`?
 
--- **Exercise**
--- Do you understand why the first of the next two lines compiles while the second
--- throws an error?
-example (M : Type*) (α : Monoid M) : (1 : M) = (1 : M) := rfl
-example (α : Type*) (M : Monoid α) : (1 : M) = (1 : M) := rfl
 
 -- associativity of `∨`
 -- **Exercise**

@@ -1,5 +1,15 @@
 import Mathlib
 
+inductive AMSS_Nat
+| AMSS_zero : AMSS_Nat
+| AMSS_succ : AMSS_Nat → AMSS_Nat
+open AMSS_Nat
+-- A structure containing simply a `0` and `+`:
+#print AddZero
+
+example : (AddZero AMSS_Nat) := sorry
+
+-- `⌘`
 
 -- ## Painful examples
 
@@ -309,6 +319,12 @@ end Rings
 -- ## Exercises
 
 noncomputable section Exercises
+
+-- **Exercise**
+-- Do you understand why the first of the next two lines compiles while the second
+-- throws an error?
+example (M : Type*) (α : Monoid M) : (1 : M) = (1 : M) := rfl
+example (α : Type*) (M : Monoid α) : (1 : M) = (1 : M) := rfl
 
 open Function
 

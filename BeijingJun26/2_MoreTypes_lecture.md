@@ -1,7 +1,3 @@
-<!-- ---
-nav_exclude: true
---- -->
-
 # More on Types
 
 So far, we've seen how to *work* with types, and we want to give a somewhat more robust account of their theory.
@@ -40,6 +36,7 @@ These terms can be interpreted as functions from `X` to `Y`, in the sense that i
 
 +++ Π-types and Σ-types
 
+### Π-types
 
 What is the type of
 ```
@@ -57,7 +54,7 @@ It belongs to the Π-type (called pi-type, or forall-type, or *dependent* produc
 (α : Type) → (α → α)
 ```
 
-More generally, given a type `A` (where `A = Sort u` is allowed), seen as an index set, and a function `I : A → Sort v`, seen as an "indexing family",
+More generally, given a type `A` (where `A = Sort u` is allowed), seen as an indexing set/type, and a function `I : A → Sort v`, seen as an "indexing family",
 ```
 Π (a : A), I a
 ∀ (a : A), I a
@@ -69,6 +66,10 @@ is the type whose terms are functions assigning to each `a : A` a term `xₐ : I
 
 * As the `λ` or `fun` notation suggest, `X → Y` is a special case of a Π-type, where `I : X → Sort v` is the constant function `fun x ↦ I x = Y`.
 
+* From the hierarchy point of view, if `A : Sort u` and `I : A → Sort v`, then `(a : A) → I a` lives in `Sort (max u v)` *except* when `v = 0` in which case `(a : A) → I a : Prop`. This last point is the "impredicativity" of the underlying type-theory.
+
+### Σ-types
+
 Similarly, terms of the Σ-type
 ```
 Σ (a : A), I a
@@ -78,13 +79,15 @@ are pairs `⟨a, xₐ⟩` where `xₐ : I a` (for technical reasons, we need her
 
 * These constructions of types that depend on terms give the name "dependent type theory" (or "dependent λ-calculus") to the underlying theory.
 
-* From the hierarchy point of view, if `A : Sort u` and `I : A → Sort v`, then `(a : A) → I a` and `(a : A) ×' I a` are types in `Sort (max u v)` *except* when `v = 0` in which case both are still in `Prop`. This is the "impredicativity" of the underlying type-theory.
+* From the hierarchy point of view, if `A : Type u` and `I : A → Type v`, then `(a : A) × I a`, is in `Sort (max u v)`.
+  
+  If `A : Sort u` and `I : A → Sort v`, then `(a : A) ×' I a : Sort (max (max 1 u) v)`.
 
 `⌘`
 +++
 
 +++ ∀ and ∃
-#### Universal quantifier
+### Universal quantifier
 
 Consider the type
 ```math
@@ -102,7 +105,7 @@ Euclid's proof is a *term* of the above type.
 * If the goal is `⊢ P y`, you might simply want to do `exact H y`, remembering that implications, `∀` and functions are all the same thing.
 
 
-#### Existential quantifier
+### Existential quantifier
 A statement
 ```math
 ∃\; n ∈ ℕ, n^2+37 · n < 2 ^ n
@@ -200,45 +203,5 @@ An equivalence can be either *proved* or *used*. This amounts to saying that:
 * A goal `⊢ P ↔ Q` can be broken into the goals `⊢ P → Q` and `⊢ Q → P` using `constructor`: indeed, to prove `⊢ P ↔ Q` amounts to creating *the unique term* of `P ↔ Q` which has two constructors;
 * The projections `(P ↔ Q).mp` (or `(P ↔ Q).1`) and `(P ↔ Q).mpr` (or `(P ↔ Q).2`) are the implications `P → Q` and `Q → P`, respectively. These are the two "components" of the term in `P ↔ Q`.
 
-`⌘`
-
-### Structures
-
-+++ Why did `#print Iff` begun with `structure` rather than with `inductive`?
-Because it is a *structure* (with two fields):
-
-> **Definition**
-    A structure is an inductive type with a unique constructor.
-+++
-
-Indeed, among inductive types (*i. e.* all types...), some are remarkably useful for formalising mathematical objects: those that *bundle* objects and properties together. So, we give them a different name.
-
-As an example, let's see what a Monoid is:
-```
-structure (M : Type*) Monoid where
-    | mul : M → M → M                        -- denoted *
-    | one : M                                -- denoted 1
-    | mul_assoc (a b c : M) : a * b * c = a * (b * c)
-    | one_mul (a : M) : 1 * a = a
-    | mul_one (a : M) : 1 * 1 = a
-```
-* Two of these fields are terms in types of kind `Type *`;
-* three of them are terms in types of kind `Prop`;
-* we often call a structure having constructor fields both in `Type *` and in `Prop` a *mixin*.
-
-So, 
-* a *monoid structure* on `M` is a collection `⟨*, 1, mul_assoc, one_mul, mul_one⟩`
-* a term of a monoid is just a term of it! The monoid is a type, so it comes with its terms even if it has more structure, which is encoded in a term `str : Monoid M`.
-
-Another extremely useful structure is the equivalence (thought of as an isomorphism):
-```
-structure (α β : Type*) : Equiv α β where
-    | toFun : α → β
-    | invFun : β → α
-    | left_inv : LeftInverse self.invFun self.toFun 
-    | right_inv : RightInverse self.invFun self.toFun
-
-infixl:25 " ≃ " => Equiv
-```
 `⌘`
 

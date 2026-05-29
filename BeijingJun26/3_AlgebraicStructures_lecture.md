@@ -1,8 +1,43 @@
-<!-- ---
-nav_exclude: true
---- -->
+# Structures
 
-# Algebraic Structures
+Recall that we finished our last class speaking about inductive types, and among those we mentioned
+```
+structure Iff (P Q : Prop) : Prop
+    number of parameters: 2
+    fields:
+        Iff.mp : P → Q
+        Iff.mpr : Q → P
+    constructor: Iff.intro {P Q : Prop} (mp : P → Q) (mpr : Q → P) : P ↔ Q
+```
+
+Why did `#print Iff` begun with `structure` rather than with `inductive`?
+Because it is a *structure* (with two fields):
+
+> **Definition**
+    A structure is an inductive type with a unique constructor.
+
+Indeed, among inductive types (*i. e.* all types...), some are remarkably useful for formalising mathematical objects: those that *bundle* objects and properties together. So, we give them a different name.
+
+As an example, let's see what a Monoid is:
+```
+structure (M : Type*) Monoid where
+    | mul : M → M → M                        -- denoted *
+    | one : M                                -- denoted 1
+    | mul_assoc (a b c : M) : a * b * c = a * (b * c)
+    | one_mul (a : M) : 1 * a = a
+    | mul_one (a : M) : 1 * 1 = a
+```
+* Two of these fields are terms in types of kind `Type *`;
+* three of them are terms in types of kind `Prop`;
+* we often call a structure having constructor fields both in `Type *` and in `Prop` a *mixin*.
+
+So, 
+* a *monoid structure* on `M` is a collection `⟨*, 1, mul_assoc, one_mul, mul_one⟩`
+* a term of a monoid is just a term of it! The monoid is a type, so it comes with its terms even if it has more structure, which is encoded in a term `str : Monoid M`.
+
+`⌘`
+
+# Algebraic structures
 
 Let's begin with some *painful* example: `⌘`
 
