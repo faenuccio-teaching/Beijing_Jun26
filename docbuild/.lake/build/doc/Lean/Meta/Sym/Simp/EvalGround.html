@@ -6,7 +6,7 @@ by checking that the input and output are definitionally equal.</p><h3 id="3-Spe
 standard <code>decide</code> proof chain:</p><pre><code>-- Standard approach (Meta.Simp)
 <a href="../../../.././Init/SimpLemmas.html#eq_true">eq_true</a> (of_decide_eq_true (h : decide (a &lt; b) = true)) : (a &lt; b) = <a href="../../../.././Init/Prelude.html#True">True</a>
 
--- Specialized lemma (Sym.Simp)
+-- Specialized <a href="../../../.././Mathlib/Tactic/Lemma.html#lemma">lemma</a> (Sym.Simp)
 theorem Int.lt_eq_true (a b : Int) (h : decide (a &lt; b) = true) : (a &lt; b) = <a href="../../../.././Init/Prelude.html#True">True</a> :=
   <a href="../../../.././Init/SimpLemmas.html#eq_true">eq_true</a> (of_decide_eq_true h)
 </code></pre><p>The simproc applies the lemma directly with <code><a href="../../../.././Init/Prelude.html#rfl">rfl</a></code> for <code>h</code>:</p><pre><code>Int.lt_eq_true 5 7 <a href="../../../.././Init/Prelude.html#rfl">rfl</a> : (5 &lt; 7) = <a href="../../../.././Init/Prelude.html#True">True</a>

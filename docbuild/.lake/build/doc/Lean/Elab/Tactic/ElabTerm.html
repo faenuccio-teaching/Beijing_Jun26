@@ -114,7 +114,7 @@ filled by typing constraints.
 definition will return <code>@f</code> for <code>f</code>. That is, it will <strong>not</strong> create
 metavariables for implicit arguments.
 A similar method is also used in Lean 3.
-This method is useful when applying lemmas such as:</p><pre><code>theorem infLeRight {s t : Set α} : s ⊓ t ≤ t
+This method is useful when applying lemmas such as:</p><pre><code>theorem infLeRight {s t : <a href="../../.././Mathlib/Data/Set/Defs.html#Set">Set</a> α} : s ⊓ t ≤ t
 </code></pre><p>where <code>s ≤ t</code> here is defined as</p><pre><code>∀ {x : α}, x ∈ s → x ∈ t
 </code></pre><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-Lean.Elab.Tactic.elabTermForApply" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="Lean.Elab.Tactic.getFVarId"><div class="def"><div class="gh_link"><a href="https://github.com/leanprover/lean4/blob/3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc/src/Lean/Elab/Tactic/ElabTerm.lean#L273-L278">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
 <span class="decl_name"><a class="break_within" href="../../.././Lean/Elab/Tactic/ElabTerm.html#Lean.Elab.Tactic.getFVarId"><span class="name">Lean</span>.<span class="name">Elab</span>.<span class="name">Tactic</span>.<span class="name">getFVarId</span></a></span><span class="decl_args">

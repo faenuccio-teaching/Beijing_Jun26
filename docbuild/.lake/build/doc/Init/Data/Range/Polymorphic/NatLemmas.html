@@ -846,7 +846,7 @@ varying the upper bound.</p><p>In the <code>base</code> case, one proves that fo
 statement holds for <code>a...=b</code>, it also holds for the larger range <code>a...=(b + 1)</code>.</p><p>The following is an example reproving <code><a href="../../../.././Init/Data/Range/Polymorphic/NatLemmas.html#Nat.length_toList_rcc">length_toList_rcc</a></code>.</p><pre><code>example (a b : Nat) : (a...=b).toList.length = b + 1 - a := by
   induction a, b using <a href="../../../.././Init/Data/Range/Polymorphic/NatLemmas.html#Nat.induct_rcc_right">Nat.induct_rcc_right</a>
   case base a b hge =&gt;
-    by_cases h : b &lt; a
+    <a href="../../../.././Mathlib/Logic/Basic.html#by_cases">by_cases</a> h : b &lt; a
     · simp only [Nat.toList_rcc_eq_nil, List.length_nil, *]
       omega
     · have : b = a := by omega

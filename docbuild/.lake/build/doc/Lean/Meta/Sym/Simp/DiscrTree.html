@@ -3,7 +3,7 @@
 framework. Unlike the standard <code>DiscrTree</code> insertion which works with arbitrary expressions,
 this module converts <code>Pattern</code> values (see <code><a href="../../../.././Sym/Pattern.html">Sym/Pattern.lean</a></code>) into discrimination tree keys.
 <code>Pattern</code> values have been preprocessed and use de Bruijn variables for wildcards instead of
-metavariables.</p><h2 id="Key-Design-Decisions" class="markdown-heading">Key Design Decisions <a class="hover-link" href="#Key-Design-Decisions">#</a></h2><p>The conversion from <code>Pattern</code> to <code><a href="../../../.././Init/Prelude.html#Array">Array</a> Key</code> respects the structural matching semantics of <code>Sym</code>:</p><ol><li><p><strong>Proof and instance arguments are wildcards.</strong> When building keys for a function application,
+metavariables.</p><h2 id="Key-Design-Decisions" class="markdown-heading">Key Design Decisions <a class="hover-link" href="#Key-Design-Decisions">#</a></h2><p>The conversion from <code>Pattern</code> to <code><a href="../../../.././Init/Prelude.html#Array">Array</a> Key</code> respects the structural matching semantics of <code><a href="../../../.././Mathlib/Data/Sym/Basic.html#Sym">Sym</a></code>:</p><ol><li><p><strong>Proof and instance arguments are wildcards.</strong> When building keys for a function application,
 arguments marked as proofs or instances in <code>ProofInstInfo</code> are replaced with <code>Key.star</code>.
 This ensures that during retrieval, terms differing only in proof/instance arguments will
 match the same entries.</p></li><li><p><strong>Bound variables are wildcards.</strong> Pattern variables (represented as de Bruijn indices in

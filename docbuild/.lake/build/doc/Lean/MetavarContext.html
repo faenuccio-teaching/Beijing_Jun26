@@ -4,9 +4,9 @@ assignments. It is used in the elaborator, tactic framework, unifier
 (aka <code>isDefEq</code>), and type class resolution (TC). First, we list all
 the requirements imposed by these modules.</p><ul><li><p>We may invoke TC while executing <code>isDefEq</code>. We need this feature to
 be able to solve unification problems such as:</p><pre><code>f ?a (ringAdd ?s) ?x ?y =?= f <a href=".././Init/Data/Int/Basic.html#Int">Int</a> intAdd n m
-</code></pre><p>where <code>(?a : Type) (?s : Ring ?a) (?x ?y : ?a)</code>.</p><p>During <code>isDefEq</code> (i.e., unification), it will need to solve the constraint</p><pre><code>ringAdd ?s =?= intAdd
+</code></pre><p>where <code>(?a : Type) (?s : <a href=".././Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> ?a) (?x ?y : ?a)</code>.</p><p>During <code>isDefEq</code> (i.e., unification), it will need to solve the constraint</p><pre><code>ringAdd ?s =?= intAdd
 </code></pre><p>We say <code>ringAdd ?s</code> is stuck because it cannot be reduced until we
-synthesize the term <code>?s : Ring ?a</code> using TC. This can be done since we
+synthesize the term <code>?s : <a href=".././Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> ?a</code> using TC. This can be done since we
 have assigned <code>?a := <a href=".././Init/Data/Int/Basic.html#Int">Int</a></code> when solving <code>?a =?= <a href=".././Init/Data/Int/Basic.html#Int">Int</a></code>.</p></li><li><p>TC uses <code>isDefEq</code>, and <code>isDefEq</code> may create TC problems as shown
 above. Thus, we may have nested TC problems.</p></li><li><p><code>isDefEq</code> extends the local context when going inside binders. Thus,
 the local context for nested TC may be an extension of the local
@@ -14,7 +14,7 @@ context for outer TC.</p></li><li><p>TC should not assign metavariables created 
 tactic framework, and outer TC problems. Reason: TC commits to the
 first solution it finds. Consider the TC problem <code><a href=".././Init/Coe.html#Coe">Coe</a> <a href=".././Init/Prelude.html#Nat">Nat</a> ?x</code>,
 where <code>?x</code> is a metavariable created by the caller. There are many
-solutions to this problem (e.g., <code>?x := <a href=".././Init/Data/Int/Basic.html#Int">Int</a></code>, <code>?x := Real</code>, ...),
+solutions to this problem (e.g., <code>?x := <a href=".././Init/Data/Int/Basic.html#Int">Int</a></code>, <code>?x := <a href=".././Mathlib/Data/Real/Basic.html#Real">Real</a></code>, ...),
 and it doesn’t make sense to commit to the first one since TC does
 not know the constraints the caller may impose on <code>?x</code> after the
 TC problem is solved.</p><p>Remark: we claim it is not feasible to make the whole system backtrackable,
