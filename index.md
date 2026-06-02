@@ -14,11 +14,11 @@ The Mathlib `commit` upon which this project is build is [5450b53](https://githu
 Classes take place on Saturday, **from 9:00 to 12h00** and then **from 14:00 to 17:00** in the South Building, Room 204.
 
 | Date      | Lecture         | Ancillary Files | Notes
-|-----------|---------------|---------------|---------------
-| May 30th, morning | Tactics and Types | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types.lean) [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types_lecture.pdf)|
-| May 30th, afternoon | More  on Types | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes.lean)   [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.pdf)|
-| June 6th, morning | Algebra 1 | |
-| June 6th, afternoon | Algebra 2| |
+|-|-|-|-
+| May 30th, morning | Tactics and Types | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types.lean) [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types_lecture.pdf) [Solutions](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/1_Tactics%26Types_solutions.lean)|
+| May 30th, afternoon | More  on Types | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes.lean) [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.pdf) [Solutions](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_solutions.lean)   |
+| June 6th, morning | Structures | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/3_AlgebraicStructures.lean)   [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/3_AlgebraicStructures_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/3_AlgebraicStructures_lecture.pdf) |
+| June 6th, afternoon | Groups and Rings | we'll use the same file as in the morning|
 | June 13th, morning | Sets and Limits | |
 | June 13th, afternoon | Advanced topics ||
 
