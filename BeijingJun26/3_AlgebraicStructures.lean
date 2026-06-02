@@ -4,10 +4,17 @@ inductive AMSS_Nat
 | AMSS_zero : AMSS_Nat
 | AMSS_succ : AMSS_Nat → AMSS_Nat
 open AMSS_Nat
+
+def AMSS_Nat_add : AMSS_Nat → AMSS_Nat → AMSS_Nat := fun n m ↦ match n, m with
+  | AMSS_zero, m => m
+  | AMSS_succ n, m => AMSS_succ (AMSS_Nat_add n m)
+
 -- A structure containing simply a `0` and `+`:
 #print AddZero
 
-example : (AddZero AMSS_Nat) := sorry
+example : AddZero AMSS_Nat := sorry
+
+example : Monoid AMSS_Nat := sorry
 
 -- `⌘`
 
@@ -33,7 +40,7 @@ lemma unit_surj (A B : Type*) [CommRing A] [CommRing B] {f : A →+* B} (a : Aˣ
 
 noncomputable section Groups
 
--- ### A wrong way to define structures
+-- ### A wrong way to define mathematical structures
 
 structure WrongGroup where
   carrier : Type*
@@ -66,11 +73,11 @@ example : Nplus.mul 1 1 = 2 := rfl
 
 -- `⌘`
 
--- ### A good way to define structures
+-- ### A good way to define mathematical structures
 
 #print Group
--- and right-clicking on it yields (the `_at_ENS` avoids Lean complaining this already exists)
-structure Group_at_ENS (G : Type*) extends DivInvMonoid G where
+-- and right-clicking on it yields (the `_at_AMSS` avoids Lean complaining this already exists)
+structure Group_at_AMSS (G : Type*) extends DivInvMonoid G where
   protected inv_mul_cancel : ∀ a : G, a⁻¹ * a = 1
 
 #print DivInvMonoid
@@ -79,7 +86,7 @@ example {G : Type*} [Group G] (x y z : G) : x * (y * z) * (x * z)⁻¹ * (x * y 
 
 #print CommGroup
 -- and right-clicking on it yields
-structure CommGroup_at_ENS (G : Type*) extends Group G, CommMonoid G
+structure CommGroup_at_AMSS (G : Type*) extends Group G, CommMonoid G
 
 example {G : Type*} [CommGroup G] (x y : G) : (x * y)⁻¹ = x⁻¹ * y⁻¹ := sorry
 
@@ -177,20 +184,20 @@ example : (Subgroup.center G).Normal := sorry
 -- #### Homomorphisms
 
 
-structure MonoidHom_ENS (M N : Type*) [Monoid M] [Monoid N] where
+structure MonoidHom_AMSS (M N : Type*) [Monoid M] [Monoid N] where
   toFun : M → N
   map_one : toFun 1 = 1
   map_mul : ∀ (x y : M), toFun (x * y) = (toFun x) * (toFun y)
 
 
 
-example (G H : Type*) [Group G] [Group H] (f g : MonoidHom_ENS G H)
+example (G H : Type*) [Group G] [Group H] (f g : MonoidHom_AMSS G H)
     (H : ∀ x, f.toFun x = g.1 x) : f = g := by -- the `f.toFun` and `g.1` are horrible!
   sorry
 
 #check MonoidHom.ext
 
-def f : MonoidHom_ENS (ℕ × ℕ) ℕ := sorry
+def f : MonoidHom_AMSS (ℕ × ℕ) ℕ := sorry
 
 #check f ⟨2,3⟩ -- we can't apply a `MonoidHom₁` to an element, which is annoying
 
@@ -206,10 +213,10 @@ functions.-/
 
 
 instance {G H : Type*} [Monoid G] [Monoid H] :
-    CoeFun (MonoidHom_ENS G H) (fun _ ↦ G → H) where
-  coe := MonoidHom_ENS.toFun
+    CoeFun (MonoidHom_AMSS G H) (fun _ ↦ G → H) where
+  coe := MonoidHom_AMSS.toFun
 
--- attribute [coe] MonoidHom_ENS.toFun
+-- attribute [coe] MonoidHom_AMSS.toFun
 #check f ⟨2,3⟩
 
 example (G₁ : Type) [CommGroup G₁] (f : G →* G₁) : ∀ x y : G, x * y = 1 → (f x) * (f y) = 1 :=
@@ -360,7 +367,7 @@ example (A : Type*) [AddCommGroup A] (N : AddSubgroup A) [N.Normal] (x y : A) :
 
 /- **¶ Exercise**
 Prove the claim made in class that a monoid homomorphism between groups respects the inverse. -/
-example (G H : Type*) [Group G] [Group H] (f : MonoidHom_ENS G H) (x : G) : f x⁻¹ = (f x)⁻¹ :=
+example (G H : Type*) [Group G] [Group H] (f : MonoidHom_AMSS G H) (x : G) : f x⁻¹ = (f x)⁻¹ :=
   sorry
 
 

@@ -63,7 +63,7 @@ def Nplus : WrongSemigroup where
 ```
 it is unhandy to connect `Nplus` with `ℕ` *as types*.
 
-#### Extends
+### Extends
 
 The right approach relies on the idea of *extending* structures. 
 
@@ -79,7 +79,7 @@ Suppose we've already defined a structure `PoorStructure` with fields `firstfiel
     rth_field : rth_Type
   ```
 
-* declare that `RichStructure` extends `PoorStructure` inheriting terms from the latter:
+* declare that `RichStructure` **extends** `PoorStructure` inheriting terms from the latter:
 
   ```
   structure RichStructure extends PoorStructure where
@@ -88,7 +88,7 @@ Suppose we've already defined a structure `PoorStructure` with fields `firstfiel
       rth_field : rth_Type
   ```
 
-+++ In details (skipped during lecture)
++++ In details (*probably skipped during lecture*)
 * The process can be iterated, yielding a structure extending several ones:
 
         VeryRichStructure extends Structure₁, Structure₂, Structure₃ where
@@ -123,7 +123,7 @@ Most of the above points are related to *classes* and *class type inference*.
 
 Classes are special structures, for which certain terms are stored in a database. They enable **class type inference**, constructing a term of a certain class given a term of a "parent" one.
 
-The idea is that each `class` type cointains a *preferred* or a *canonical* term, declared using the keyword `instance` rather than `def`; and that has been registered in the database to be accessible whenever needed.
+The idea is that each `class` type cointains a *preferred* or a *canonical* term, declared using the keyword `instance` rather than `def`; and this term has been registered in the database to be accessible whenever needed.
 ```quote
 Warning: often, Classes have parameters, so if `G` and `H` are types, `Group G` and `Group H` are different types!
 ```
@@ -138,7 +138,7 @@ To check what is the canonical term of a certain class type, use the command `#s
 +++ Interlude: `Mathlib`
 #### Main take-home message: it is huge!
 
-You can access it on its [gitHub repo](https://github.com/leanprover-community/mathlib4) or, **much better**, through its [documentation website](https://leanprover-community.github.io/mathlib4_docs/). It changes very rapidly (>10 times a day), so I created a ["frozen" documentation](https://faenuccio-teaching.github.io/M1_ENS_26/docs/) website with the Mathlib version used in this course.
+You can access it on its [gitHub repo](https://github.com/leanprover-community/mathlib4) or, **much better**, through its [documentation website](https://leanprover-community.github.io/mathlib4_docs/). It changes very rapidly (>10 times a day), so I created a ["frozen" documentation](https://faenuccio-teaching.github.io/Beijing_Jun26/docs/) website with the Mathlib version used in this course.
 
 As a rule of thumb: 
 * if something is below PhD level it is *probably* in Mathlib. Unless it is not.
@@ -212,7 +212,7 @@ class Setoid (α : Sort u) where
 Observe that `α` is a parameter, so a term in `Setoid α` is an equivalence relation on `α`. This comes with a notation `a ≈ b` (typed as `\~~`) meaning that `r a b`, *i. e.* `a,b : α` are equivalent.
 
 +++ Why a class instead of a structure? Isn't this an obsession?
-It would not change much, and in many *explicit* occurrences terms of `Setoid α` are actually named and in parenthesis, as in `(s : Setoid α)`. But we want automation, so as to find the *canonical* equivalence relation on `G ⧸ H` under the assumption that `H` is normal, and not having Lean asking us to choose one relation each time.
+It would not change much, and in many *explicit* occurrences terms of `Setoid α` are actually named and in parenthesis, as in `(s : Setoid α)`. But we want automation, for example in order to find the *canonical* equivalence relation on `G ⧸ H` under the assumption that `H` is normal, and not having Lean asking us to choose one relation each time.
 +++
 
 Given `s : Setoid α` we can construct `Quotient s`: it is a type whose terms correspond to equivalence classes of `s`, yet **I cannot define it because it is a Lean primitive**.
@@ -232,7 +232,7 @@ In the special case of `{G : Type*}  [Group G] (H : Subgroup G)` there are two r
 * the corresponding `Quotient (QuotientGroup.leftRel H) : Type*`, denoted `G ⧸ H` (where `⧸` is `\/`, or `\quot` and not `/`);
 * the corresponding `Quotient (QuotientGroup.rightRel H) : Type*`;
 * the corresponding bare function `Quotient.mk (QuotientGroup.leftRel H) : G → G ⧸ H`;
-* the much more interesting `Quotient.mk' _ : [_ : H.Normal] → G →* G ⧸ H`.
+* the *much more interesting* `Quotient.mk' _ : [_ : H.Normal] → G →* G ⧸ H`.
 
 `⌘`
 ## Rings
