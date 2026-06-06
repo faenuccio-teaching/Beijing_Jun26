@@ -201,7 +201,7 @@ structure Iff (P Q : Prop) : Prop
 An equivalence can be either *proved* or *used*. This amounts to saying that:
 
 * A goal `⊢ P ↔ Q` can be broken into the goals `⊢ P → Q` and `⊢ Q → P` using `constructor`: indeed, to prove `⊢ P ↔ Q` amounts to creating *the unique term* of `P ↔ Q` which has two constructors;
-* The projections `(P ↔ Q).mp` (or `(P ↔ Q).1`) and `(P ↔ Q).mpr` (or `(P ↔ Q).2`) are the implications `P → Q` and `Q → P`, respectively. These are the two "components" of the term in `P ↔ Q`.
+* The projections `Iff.mp` (or `Iff.1`) and `Iff.mpr` (or `Iff.2`) are the implications `P → Q` and `Q → P`, respectively. These are the two "components" of the term in `P ↔ Q`.
 
 `⌘`
 
