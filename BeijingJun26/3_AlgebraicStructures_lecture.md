@@ -25,7 +25,7 @@ structure (M : Type*) Monoid where
     | one : M                                -- denoted 1
     | mul_assoc (a b c : M) : a * b * c = a * (b * c)
     | one_mul (a : M) : 1 * a = a
-    | mul_one (a : M) : 1 * 1 = a
+    | mul_one (a : M) : a * 1 = a
 ```
 * Two of these fields are terms in types of kind `Type *`;
 * three of them are terms in types of kind `Prop`;
