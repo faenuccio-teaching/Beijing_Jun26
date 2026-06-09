@@ -62,7 +62,7 @@ More generally, given a type `A` (where `A = Sort u` is allowed), seen as an ind
 ```
 is the type whose terms are functions assigning to each `a : A` a term `xₐ : I a`. When `A` is non-empty, they are collections `(a, xₐ)` for `a` spanning all terms of type `A` and where `xₐ : I a`. Its  terms are written `λ a : A ↦ xₐ`, or `fun a : A ↦ xₐ`.
 
-* If you've got a geometric intuition, this looks very much like a fibration, where `A` is the base and `I a` is the fiber above `a : A`.
+* If you've got a geometric intuition, `(a : A) → I a` looks very much like *the global sections* of a fibration, where `A` is the base and `I a` is the fiber above `a : A`.
 
 * As the `λ` or `fun` notation suggest, `X → Y` is a special case of a Π-type, where `I : X → Sort v` is the constant function `fun x ↦ I x = Y`.
 
@@ -76,6 +76,8 @@ Similarly, terms of the Σ-type
 (a : A) × I a
 ```
 are pairs `⟨a, xₐ⟩` where `xₐ : I a` (for technical reasons, we need here that `A : Type u` and  that `I : A → Type v`: if you really want to use `Sort` use Σ', or ×'). Type `×` (*resp.* `×'`) as `\x` (*resp.* `\x'`).
+
+* Again back to the geometric intution, `(a : A) × I a` corresponds to the global space of a fibration of base `A` and fibers `I a`.
 
 * These constructions of types that depend on terms give the name "dependent type theory" (or "dependent λ-calculus") to the underlying theory.
 
