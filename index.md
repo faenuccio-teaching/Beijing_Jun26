@@ -19,8 +19,8 @@ Classes take place on Saturday, **from 9:00 to 12h00** and then **from 14:00 to 
 | May 30th, afternoon | More  on Types | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes.lean) [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_lecture.pdf) [Solutions](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/2_MoreTypes_solutions.lean)   |
 | June 6th, morning | Structures | [Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/3_AlgebraicStructures.lean)   [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/3_AlgebraicStructures_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/3_AlgebraicStructures_lecture.pdf) |
 | June 6th, afternoon | Groups and Rings | we'll use the same file as in the morning|
-| June 13th, morning | Sets and Limits | |
-| June 13th, afternoon | Advanced topics ||
+| June 13th, morning | Homomorphisms and Quotients | ll use the same file as last week|
+| June 13th, afternoon | Sets and Filters |[Lean File](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/4_Sets&Limits.lean)   [Markdown](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/4_Sets&Limits_lecture.md) [PDF](https://github.com/faenuccio-teaching/Beijing_Jun26/blob/master/BeijingJun26/4_Sets&Limits_lecture.pdf)|
 
 
 ## References
