@@ -194,14 +194,13 @@ section Exercises
 -- **Exercise**
 -- Why is `¬ P : Prop` when `P : Prop`?
 
-
 -- **Exercise**
 /- Consider the function `F` sending `n : ℕ` to the statement
 `0 ≠ n ∧ (∀ α : Type 2, ∃ v w : Vector α n), v ≠ w`
 1. How do you expect `F 2` to look like?
-2. What is the type of `fun n ↦ (fun (α : Type 2) ↦ Vector α n)`? To which universe level does this
+2. What is the type of `fun n ↦ fun (α : Type 2) ↦ Vector α n`? To which universe level does this
   type belong to?
-3. What is the type of `fun n ↦ ((fun α : Type 2) ↦ ∃ v : Vector α n, v ≠ 0`?
+3. What is the type of `fun n ↦ fun (α : Type 2) ↦ ∃ v : Vector α n, v ≠ 0`?
 4. What is the type of `fun n ↦ (∀ α : Type 2, ∃ v : Vector α n, v ≠ 0)`? To which universe level
   does this type belong to?
 5. What is the type of `F 2`, and to which universe level does this type belong?

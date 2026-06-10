@@ -132,7 +132,7 @@ Fundamentally, `Prop` contains only two types: `True` and `False`.
 `⌘`
 
 #### Key points to keep in mind
-* If `P : Prop` then either `P` has not term at all ("`P` is false"), or `P` has a unique term `hp` (`hp` is "a witness that `P` is true"; or a **proof** of `P`).
-* Both `ℕ` and `3 < -1` and `ℝℙ²` and `(a+b)² = a² + 2ab + b²` are types, although of different flavour.
+* If `P : Prop` then either `P` has no term at all ("`P` is false"), or `P` has a unique term `hp` (`hp` is "a witness that `P` is true"; or a **proof** of `P`).
+* Each of `ℕ` and `3 < -1` and `ℝℙ²` and `(a+b)² = a² + 2ab + b²` are types, although of different flavour.
 
 `⌘ → Exercises`

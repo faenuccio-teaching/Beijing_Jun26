@@ -1,4 +1,4 @@
-# Structures
+  # Structures
 
 Recall that we finished our last class speaking about inductive types, and among those we mentioned
 ```
@@ -10,7 +10,7 @@ structure Iff (P Q : Prop) : Prop
     constructor: Iff.intro {P Q : Prop} (mp : P → Q) (mpr : Q → P) : P ↔ Q
 ```
 
-Why did `#print Iff` begun with `structure` rather than with `inductive`?
+Why did `#print Iff` begin with `structure` rather than with `inductive`?
 Because it is a *structure* (with two fields):
 
 > **Definition**
@@ -20,7 +20,7 @@ Indeed, among inductive types (*i. e.* all types...), some are remarkably useful
 
 As an example, let's see what a Monoid is:
 ```
-structure (M : Type*) Monoid where
+structure Monoid (M : Type*) where
     | mul : M → M → M                        -- denoted *
     | one : M                                -- denoted 1
     | mul_assoc (a b c : M) : a * b * c = a * (b * c)
