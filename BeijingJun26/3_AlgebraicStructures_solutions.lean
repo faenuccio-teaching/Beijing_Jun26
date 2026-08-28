@@ -541,6 +541,8 @@ example (A B : Type*) [AddGroup A] [AddGroup B] (f : A →+ B) : Injective f ↔
     apply h (x - y)
     rwa [AddMonoidHom.mem_ker, map_sub]
 
+
+
 /- **¶ Exercise**
 Prove that the homomorphisms between commutative monoids have a structure of commutative monoid. -/
 example (M N : Type*) [CommMonoid M] [CommMonoid N] : CommMonoid (M →* N) where
